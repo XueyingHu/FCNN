@@ -1,10 +1,10 @@
 function[sum]= mytest(x_test,y_test,w,b,w_h,b_h)
-%x_test:测试样本的像素数据
-%y_test：测试样本的标签
-%w：输出层权重
-%b：输出层偏置
-%w_h：隐藏层权重
-%b_h：隐藏层偏置
+%x_test: testing sample pixels
+%y_test：testing sample label
+%w：output layer weight
+%b：output layer bias
+%w_h：hidden layer weight
+%b_h：hidden layer bias
 
 test = zeros(10,1000);
 for k=1:1000
@@ -13,7 +13,7 @@ for k=1:1000
     hid = layerout(w_h,b_h,x);
     test(:,k)=layerout(w,b,hid);
 
-    %正确率表示方式一：输出正确个数
+    %First way of accuracy：accurate output count
     [t,t_index]=max(test);
     [y,y_index]=max(y_test);
     sum = 0;
@@ -24,7 +24,7 @@ for k=1:1000
     end
 end
 
-fprintf('正确率为%d/1000\n',sum);
-%正确率表示方式二：用plotconfusion函数
+fprintf('Accuracy is %d/1000\n',sum);
+%Second way of accuracy：plotconfusion function
 plotconfusion(y_test,test);
 end
