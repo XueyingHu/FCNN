@@ -8,12 +8,19 @@ Dependencies:
 Contents:
 
 ┌── README.md               # This document
+
 |
+
 |── main.m                  # Main training/testing document 
+
 |
+
 |── mytrain.m               # Model training code
+
 |
+
 |── mytest.m                # Model testing code
+
 |
 |──layerout.m               # Acctivation function
 |
